@@ -1,0 +1,14 @@
+.cabecera-name{
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 30px;
+}
+
+.about{
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+}
+.navbar{
+    background-color: #30A2D2;
+}
