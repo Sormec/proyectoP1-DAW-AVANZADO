@@ -2,6 +2,116 @@ mat-grid-tile {
     background: lightblue;
     margin: 2px solid #0000;
 }
-.v-uno{
+
+.v-uno {
     padding: 0px;
+}
+
+/* .candidato {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.candidato img{
+    display: flex;
+    visibility: visible;
+    width: 200px; 
+    height: 300px;
+    max-width: 200px; 
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+} */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    background-color: none;
+}
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+    /* Grid */
+	display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+	/* Grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: aquamarine;
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+
+	
+}
+
+.card .textos {
+	height: 100%;
+	/* Grid */
+    display: grid;
+    grid-template-rows: 1fr auto;
+	
+}
+
+.banner {
+    background-color: #a2b1e9;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+    /* Grid */
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+.banner img{
+    width: 500px;
+    height: 700px;
 }
