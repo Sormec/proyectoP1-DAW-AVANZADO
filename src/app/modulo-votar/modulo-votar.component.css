@@ -76,6 +76,15 @@ mat-grid-tile {
 	
 }
 
+.card:hover {
+	background-color: rgb(195, 243, 227);	
+}
+
+.card.seleccionado {
+	background-color: lightblue;
+	border: 1px solid rgb(255, 35, 35);
+}
+
 .banner {
     background-color: #a2b1e9;
 	border-radius: 10px;
@@ -112,6 +121,6 @@ mat-grid-tile {
 	cursor: pointer;
 }
 .banner img{
-    width: 500px;
-    height: 700px;
+   /*  width: 500px;
+    height: 700px; */
 }

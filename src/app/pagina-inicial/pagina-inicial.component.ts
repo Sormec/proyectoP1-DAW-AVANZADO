@@ -43,4 +43,8 @@ export class PaginaInicialComponent {
     this.sharedService.updateModulo(true);
     this.router.navigate(['/modulo-votacion']);
   }
+  goVerResultados(){
+    this.sharedService.updateModulo(true);
+    this.router.navigate(['/modulo-resultados'])
+  }
 }

@@ -17,7 +17,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { ModuloVotarComponent } from './modulo-votar/modulo-votar.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { curveLinear } from 'd3-shape';
+import { ModuloVerResultadosComponent } from './modulo-ver-resultados/modulo-ver-resultados.component';
+import { ScaleLinear, ScalePoint, ScaleTime } from 'd3-scale';
+import { BaseType } from 'd3-selection';
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FooterComponent,
     LoginComponent,
     PaginaInicialComponent,
-    ModuloVotarComponent,    
+    ModuloVotarComponent,
+    ModuloVerResultadosComponent,    
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     MatInputModule,
     MatGridListModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
