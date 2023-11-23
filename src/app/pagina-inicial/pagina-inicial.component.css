@@ -2,14 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30%;
     position: relative;
+    padding-bottom: 100px;
+    min-height: 100%;
 }
 .votar, .candidatos, .resultados{
     
     margin: 10px; 
     padding: 20px;
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 mat-icon{
     font-size: 2rem;

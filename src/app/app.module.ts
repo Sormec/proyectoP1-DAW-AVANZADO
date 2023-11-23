@@ -19,9 +19,9 @@ import { ModuloVotarComponent } from './modulo-votar/modulo-votar.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { curveLinear } from 'd3-shape';
-import { ModuloVerResultadosComponent } from './modulo-ver-resultados/modulo-ver-resultados.component';
 import { ScaleLinear, ScalePoint, ScaleTime } from 'd3-scale';
 import { BaseType } from 'd3-selection';
+import { ModuloConteoComponent } from './modulo-conteo/modulo-conteo.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { BaseType } from 'd3-selection';
     LoginComponent,
     PaginaInicialComponent,
     ModuloVotarComponent,
-    ModuloVerResultadosComponent,    
+    ModuloConteoComponent,    
   ],
   imports: [
     BrowserModule,
