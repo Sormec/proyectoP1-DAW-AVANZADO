@@ -24,7 +24,7 @@ export class ModuloConteoComponent {
   constructor(private sharedService: SharedService, private dataService: DataGraficaService) {}
   
   get mostrarDatos() {
-    return this.dataService.candidatosData;
+    return this.dataService.candidatosGrafica();
   }
 
   aceptar(){

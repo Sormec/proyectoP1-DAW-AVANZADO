@@ -4,8 +4,8 @@
     font-size: 1.5rem;
     background-color: #30A2D2; 
 }
+/* position debe estar en 'relative' para que este apegado abajo */
 footer{
-    position: absolute;
     width: 100%;
     margin-top: 50px;
     margin-bottom: 0px;
