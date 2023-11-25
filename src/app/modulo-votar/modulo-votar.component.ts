@@ -35,42 +35,34 @@ export class ModuloVotarComponent {
         case 0:
           this.puntos++;
           this.dataService.setVoto(0);
-          console.log(this.dataService.getCandidatos[0].N_votos);
           break;
         case 1:
           this.puntos++;
           this.dataService.setVoto(1);
-          console.log(this.dataService.getCandidatos[1].N_votos);
           break;
         case 2:
           this.puntos++;
           this.dataService.setVoto(2);
-          console.log(this.dataService.getCandidatos[2].N_votos);
           break;
          case 3:
           this.puntos++;
           this.dataService.setVoto(3);
-          console.log(this.dataService.getCandidatos[3].N_votos);
           break;
         case 4:
           this.puntos++;
           this.dataService.setVoto(4);
-          console.log(this.dataService.getCandidatos[4].N_votos);
           break;
         case 5:
           this.puntos++;
           this.dataService.setVoto(5);
-          console.log(this.dataService.getCandidatos[5].N_votos);
           break;
         case 6:
           this.puntos++;
           this.dataService.setVoto(6);
-          console.log(this.dataService.getCandidatos[6].N_votos);
           break;
         case 7:
           this.puntos++;
           this.dataService.setVoto(7);
-          console.log(this.dataService.getCandidatos[7].N_votos);
           break; 
         default:
           alert('Por favor, selecciona una opción primero.');

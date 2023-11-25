@@ -22,8 +22,6 @@ export class HeaderComponent implements OnInit{
   ngOnInit(){
     this.sharedService.isLoggedIn$.subscribe(isLoggedIn =>{
       this.isLoggedIn = isLoggedIn;
-      /* hasta aquí me quede: ¿Como logro que siempre que regrese al menu, cambie de header? */
-
       this.email = this.sharedService.getEmail();
     })
     
@@ -33,17 +31,25 @@ export class HeaderComponent implements OnInit{
 
     this.sharedService.isVotar$.subscribe(isVotar =>{
       this.isVotar = isVotar;
-    }) 
+    })
+    
+    this.sharedService.isConteo$.subscribe(isConteo =>{
+      this.isConteo = isConteo;
+    })
     
   }
 
   logOut(){
     this.sharedService.updateMenu(false);
+    this.sharedService.updateVotar(false);
+    this.sharedService.updateConteo(false);
     this.sharedService.updateLogin(true);
     this.router.navigate(['']);
   }
   goMenu(){
+    this.sharedService.updateLogin(false);
     this.sharedService.updateVotar(false);
+    this.sharedService.updateConteo(false);
     this.sharedService.updateMenu(true);
     this.router.navigate(['/Inicio']);
   }

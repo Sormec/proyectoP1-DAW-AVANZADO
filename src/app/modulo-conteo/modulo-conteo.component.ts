@@ -24,11 +24,10 @@ export class ModuloConteoComponent {
   constructor(private sharedService: SharedService, private dataService: DataGraficaService) {}
   
   get mostrarDatos() {
-    return this.dataService.candidatosGrafica();
+    return this.dataService.candidatosGrafica;
   }
 
-  aceptar(){
-  }
+  
 
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));

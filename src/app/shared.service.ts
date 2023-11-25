@@ -30,8 +30,10 @@ export class SharedService{
     updateMenu(isMenuVar : boolean){
         this.isMenu.next(isMenuVar);
     }
-    //para actualizar el header y volver a estado inicial
-    /* gomenu() { this.updateModulo(false); } */
+    
+    updateConteo(isConteoVar : boolean) {
+        this.isConteo.next(isConteoVar);
+    }
     //set y get del email
     setEmail(email:string){
         this.userEmail = email;

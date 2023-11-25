@@ -5,7 +5,7 @@ import { SharedService } from '../shared.service';
   providedIn: 'root'
 })
 export class DataGraficaService {
-  constructor (){}
+  constructor (){ this.actualizarData() }
   //arreglo con todos los datos de la interface Candidado
   private DATAcandidatos: Candidato[] = [
     {ID: 1, Presidente: "Yaku Pérez", Vicepresidente: "Nory Pinela", PartidoPolitico: "Claro que se puede", N_votos: 5},
@@ -17,87 +17,95 @@ export class DataGraficaService {
     {ID: 7, Presidente: "Fernando Villavivencio", Vicepresidente: "Andrea Gonzáles", PartidoPolitico: "Construye", N_votos: 5},
     {ID: 8, Presidente: "Xavier Hervas", Vicepresidente: "Luz Marina Vega", PartidoPolitico: "RETO", N_votos: 5},
   ];
+  //metodo que actualiza los datos para que se visualicen los cambios
+  actualizarData(){
+    this.data = this.DATAcandidatos.map(candidato => ({
+      name: candidato.Presidente,
+      value: candidato.N_votos
+    }));
+  }
   //arreglo con los datos que va a usar la grafica
-  //NO ESTA LEYENDO BIEN LA GRAFICA
   private data = [
     {
-      name: this.getCandidatos[0].Presidente,
-      value: this.getCandidatos[0].N_votos
+      name: this.DATAcandidatos[0].Presidente,
+      value: this.DATAcandidatos[0].N_votos
     },
     {
-      name: this.getCandidatos[1].Presidente,
-      value: this.getCandidatos[1].N_votos
+      name: this.DATAcandidatos[1].Presidente,
+      value: this.DATAcandidatos[1].N_votos
     },
     {
-      name: this.getCandidatos[2].Presidente,
-      value: this.getCandidatos[2].N_votos
+      name: this.DATAcandidatos[2].Presidente,
+      value: this.DATAcandidatos[2].N_votos
     },
     {
-      name: this.getCandidatos[3].Presidente,
-      value: this.getCandidatos[3].N_votos
+      name: this.DATAcandidatos[3].Presidente,
+      value: this.DATAcandidatos[3].N_votos
     },
     {
-      name: this.getCandidatos[4].Presidente,
-      value: this.getCandidatos[4].N_votos
+      name: this.DATAcandidatos[4].Presidente,
+      value: this.DATAcandidatos[4].N_votos
     },
     {
-      name: this.getCandidatos[5].Presidente,
-      value: this.getCandidatos[5].N_votos
+      name: this.DATAcandidatos[5].Presidente,
+      value: this.DATAcandidatos[5].N_votos
     },
     {
-      name: this.getCandidatos[6].Presidente,
-      value: this.getCandidatos[6].N_votos
+      name: this.DATAcandidatos[6].Presidente,
+      value: this.DATAcandidatos[6].N_votos
     },
     {
-      name: this.getCandidatos[7].Presidente,
-      value: this.getCandidatos[7].N_votos
+      name: this.DATAcandidatos[7].Presidente,
+      value: this.DATAcandidatos[7].N_votos
     },
   ]
-
-  candidatosGrafica() {
+  
+  get candidatosGrafica() {
     return this.data;
   }
   //cada voto equivale a 10
   setVoto(opcion: number){
     switch (opcion) {
       case 0:
-        this.DATAcandidatos[0].N_votos = this.getCandidatos[0].N_votos + 10;
+        this.getCandidatos[0].N_votos = this.getCandidatos[0].N_votos + 10;
         console.log(this.DATAcandidatos[0].N_votos);
         break;
       case 1:
-        this.DATAcandidatos[1].N_votos = this.getCandidatos[1].N_votos + 10;
+        this.getCandidatos[1].N_votos = this.DATAcandidatos[1].N_votos + 10;
         console.log(this.DATAcandidatos[1].N_votos);
         break;
       case 2:
-        this.DATAcandidatos[2].N_votos = this.getCandidatos[2].N_votos + 10;
+        this.getCandidatos[2].N_votos = this.DATAcandidatos[2].N_votos + 10;
         console.log(this.DATAcandidatos[2].N_votos);
         break;
       case 3:
-        this.DATAcandidatos[3].N_votos = this.getCandidatos[3].N_votos + 10;
+        this.getCandidatos[3].N_votos = this.DATAcandidatos[3].N_votos + 10;
         console.log(this.DATAcandidatos[3].N_votos);
         break;
       case 4:
-        this.DATAcandidatos[4].N_votos = this.getCandidatos[4].N_votos + 10;
+        this.getCandidatos[4].N_votos = this.DATAcandidatos[4].N_votos + 10;
         console.log(this.DATAcandidatos[4].N_votos);
         break;
       case 5:
-        this.DATAcandidatos[5].N_votos = this.getCandidatos[5].N_votos + 10;
+        this.getCandidatos[5].N_votos = this.DATAcandidatos[5].N_votos + 10;
         console.log(this.DATAcandidatos[5].N_votos);
         break;
       case 6:
-        this.DATAcandidatos[6].N_votos = this.getCandidatos[6].N_votos + 10;
+        this.getCandidatos[6].N_votos = this.DATAcandidatos[6].N_votos + 10;
         console.log(this.DATAcandidatos[6].N_votos);
         break;
       case 7:
-        this.DATAcandidatos[7].N_votos = this.getCandidatos[7].N_votos + 10;
+        this.getCandidatos[7].N_votos = this.DATAcandidatos[7].N_votos + 10;
         console.log(this.DATAcandidatos[7].N_votos);
         break;
       default:
         console.log('ERROR: En función set (setVoto)');
-        break;
+        break; 
     }
+    this.actualizarData();
   }
-  get getCandidatos(){
+
+  get getCandidatos(): Candidato[] {
     return this.DATAcandidatos;
   }
 }
