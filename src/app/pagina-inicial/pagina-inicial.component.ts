@@ -40,11 +40,12 @@ export class PaginaInicialComponent {
   }
   //metodo para redirigir al modulo para votar
   goVotar(){
-    this.sharedService.updateModulo(true);
+    this.sharedService.updateVotar(true);
+    this.sharedService.updateMenu(false);
     this.router.navigate(['/modulo-votacion']);
   }
   goConteo(){
-    this.sharedService.updateModulo(true);
+    this.sharedService.updateVotar(true);
     this.router.navigate(['/modulo-conteo']);
   }
 }

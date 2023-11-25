@@ -9,9 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  isLoggedIn: boolean = false;
-  isModulo: boolean = false;
+  isLoggedIn: boolean = true;
+  isMenu: boolean = false;
+  isVotar: boolean = false;
+  isConteo: boolean = false;
   email: string = '';
+
+
+
   constructor(private sharedService:SharedService, private router:Router){}
 
   ngOnInit(){
@@ -21,17 +26,25 @@ export class HeaderComponent implements OnInit{
 
       this.email = this.sharedService.getEmail();
     })
-    this.sharedService.isModulo$.subscribe(isModulo =>{
-      this.isModulo = isModulo;
+    
+    this.sharedService.isMenu$.subscribe(isMenu =>{
+      this.isMenu = isMenu;
     })
+
+    this.sharedService.isVotar$.subscribe(isVotar =>{
+      this.isVotar = isVotar;
+    }) 
+    
   }
 
   logOut(){
+    this.sharedService.updateMenu(false);
+    this.sharedService.updateLogin(true);
     this.router.navigate(['']);
-    this.sharedService.logout();
   }
   goMenu(){
+    this.sharedService.updateVotar(false);
+    this.sharedService.updateMenu(true);
     this.router.navigate(['/Inicio']);
-    this.sharedService.gomenu();
   }
 }

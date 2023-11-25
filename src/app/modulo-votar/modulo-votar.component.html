@@ -2,7 +2,7 @@
     <div class="contenedor-conciertos">
         <!-- con [class.seleccionado] ayuda a aplicar la clase CSS 'seleccionado' y que se quite cuando se de click en votar-->
         <!-- *ngFor="let candidato of listaCandidatos" hace que se repita toda la etiqueta 8 veces -->
-        <div ngModel class="card" style="background-image: url('../imagenes/images1.jpg')" (click)="seleccionarOpcion(0)" [class.seleccionado]="opcionSeleccionada === 0">
+        <div class="card" style="background-image: url('../imagenes/images1.jpg')" (click)="seleccionarOpcion(0)" [class.seleccionado]="opcionSeleccionada === 0">
             <div class="textos">
                 <h3> {{listaCandidatos[0].Presidente}} y {{listaCandidatos[0].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[0].PartidoPolitico}}</p>

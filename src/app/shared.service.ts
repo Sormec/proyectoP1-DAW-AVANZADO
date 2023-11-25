@@ -5,28 +5,33 @@ import { BehaviorSubject } from "rxjs";
     providedIn: 'root'
 })
 export class SharedService{
-    private isLoggedIn = new BehaviorSubject<boolean>(false);
+    private isLoggedIn = new BehaviorSubject<boolean>(true);
     isLoggedIn$ = this.isLoggedIn.asObservable();
     public userEmail:string ='';
     
-    private isModulo = new BehaviorSubject<boolean>(false);
-    isModulo$ = this.isModulo.asObservable();
+    private isMenu = new BehaviorSubject<boolean>(false);
+    isMenu$ = this.isMenu.asObservable();
+    
+    private isVotar = new BehaviorSubject<boolean>(false);
+    isVotar$ = this.isVotar.asObservable();
+    
+    private isConteo = new BehaviorSubject<boolean>(false);
+    isConteo$ = this.isConteo.asObservable();
     
     //actualiza el texto de inicio del header
-    updateHeader(isLoggedInVariable : boolean){
+    updateLogin(isLoggedInVariable : boolean){
         this.isLoggedIn.next(isLoggedInVariable);
     }
     //actualiza el header con el modulo de votacion
-    updateModulo(isModuloVar : boolean){
-        this.isModulo.next(isModuloVar);
+    updateVotar(isVotarVar : boolean){
+        this.isVotar.next(isVotarVar);
     }
-    //NO SE ESTA UTILIZANDO ESTE METODO, SE PUEDE UTILIZAR MÁS ADELANTE
-    /* updateLogin(isLoggedInVariable : boolean){
-        this.isLoggedIn.next(isLoggedInVariable);
-    } */
+    
+    updateMenu(isMenuVar : boolean){
+        this.isMenu.next(isMenuVar);
+    }
     //para actualizar el header y volver a estado inicial
-    logout() { this.updateHeader(false); }
-    gomenu() { this.updateModulo(false); }
+    /* gomenu() { this.updateModulo(false); } */
     //set y get del email
     setEmail(email:string){
         this.userEmail = email;

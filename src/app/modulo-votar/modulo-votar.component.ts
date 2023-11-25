@@ -17,9 +17,15 @@ export class ModuloVotarComponent {
   puntos: number = 0; // almacena los puntos
   contador: number = 0;
   listaCandidatos: any[] = [];
+  /* isVotar: boolean = true; */
+  isVotar: boolean = true;
   
   ngOnInit(): void {
     this.listaCandidatos = this.dataService.getCandidatos;
+
+    this.sharedService.isVotar$.subscribe(isVotar =>{
+      this.isVotar = isVotar;
+    })
   }
   
   voto(){
