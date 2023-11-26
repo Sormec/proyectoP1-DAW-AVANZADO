@@ -16,9 +16,9 @@ export class LoginComponent { constructor(public dialog: MatDialog, private shar
   } 
   //metodo para validar el ingreso del usuario
   login(form: NgForm) {
-    let email = form.value.email;
+    let cedula = form.value.cedula;
     let password = form.value.password;
-    if (email === 'alguien@example.com' && password === '1234') {
+    if (cedula === 2927741249 && password === 'A1234') {
       this.sharedService.updateLogin(false);
       this.sharedService.updateMenu(true);
       this.sharedService.setEmail(form.value.email);
