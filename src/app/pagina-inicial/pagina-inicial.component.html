@@ -1,14 +1,7 @@
-<div class="container-sm mt-5 box">
-  <img src="../imagenes/images1.jpg" alt="">
-    <div class="mb-4 votar" (click)="goVotar()">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> <br>
-        <label class="form-label" for="form2Example2">Votar</label>  
-    </div>
-    
-    
-    <div class="mb-4 resultados" (click)="goConteo()">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> <br>
-        <label class="form-label" for="form2Example2">Visualizar 
-          resultados</label>  
-    </div>
+<div class="container">
+  <div class="row vh-100 justify-content-around align-items-center">
+          <button type="button" class="col-sm-2 border btn btn-primary btn-inicial" type="submit" (click)="goVotar()">VOTO</button>
+          <button type="button" class="col-sm-2 border btn btn-primary btn-inicial" type="submit" (click)="goConteo()">CONTEO</button>
+   </div>
 </div>
+ 

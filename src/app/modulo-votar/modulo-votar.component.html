@@ -2,50 +2,50 @@
     <div class="contenedor-conciertos">
         <!-- con [class.seleccionado] ayuda a aplicar la clase CSS 'seleccionado' y que se quite cuando se de click en votar-->
         <!-- *ngFor="let candidato of listaCandidatos" hace que se repita toda la etiqueta 8 veces -->
-        <div class="card" style="background-image: url('../imagenes/images1.jpg')" (click)="seleccionarOpcion(0)" [class.seleccionado]="opcionSeleccionada === 0">
+        <div class="card" (click)="seleccionarOpcion(0)" [class.seleccionado]="opcionSeleccionada === 0">
             <div class="textos">
                 <h3> {{listaCandidatos[0].Presidente}} y {{listaCandidatos[0].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[0].PartidoPolitico}}</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('./img/6.jpg')" (click)="seleccionarOpcion(1)" [class.seleccionado]="opcionSeleccionada === 1">
+        <div class="card" (click)="seleccionarOpcion(1)" [class.seleccionado]="opcionSeleccionada === 1">
             <div class="textos">
                 <h3> {{listaCandidatos[1].Presidente}} y {{listaCandidatos[1].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[1].PartidoPolitico}}</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('./img/2.jpg')" (click)="seleccionarOpcion(2)" [class.seleccionado]="opcionSeleccionada === 2">
+        <div class="card" (click)="seleccionarOpcion(2)" [class.seleccionado]="opcionSeleccionada === 2">
             <div class="textos">
                 <h3> {{listaCandidatos[2].Presidente}} y {{listaCandidatos[2].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[2].PartidoPolitico}}</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('./img/3.jpg')" (click)="seleccionarOpcion(3)" [class.seleccionado]="opcionSeleccionada === 3">
+        <div class="card" (click)="seleccionarOpcion(3)" [class.seleccionado]="opcionSeleccionada === 3">
             <div class="textos">
                 <h3> {{listaCandidatos[3].Presidente}} y {{listaCandidatos[3].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[3].PartidoPolitico}}</p>
             </div>
         </div>
 
-        <div class="card" style="background-image: url('./img/4.jpg')" (click)="seleccionarOpcion(4)" [class.seleccionado]="opcionSeleccionada === 4">
+        <div class="card" (click)="seleccionarOpcion(4)" [class.seleccionado]="opcionSeleccionada === 4">
             <div class="textos">
                 <h3> {{listaCandidatos[4].Presidente}} y {{listaCandidatos[4].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[4].PartidoPolitico}}</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('./img/5.jpg')" (click)="seleccionarOpcion(5)" [class.seleccionado]="opcionSeleccionada === 5">
+        <div class="card" (click)="seleccionarOpcion(5)" [class.seleccionado]="opcionSeleccionada === 5">
             <div class="textos">
                 <h3> {{listaCandidatos[5].Presidente}} y {{listaCandidatos[5].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[5].PartidoPolitico}}</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('./img/6.jpg')" (click)="seleccionarOpcion(6)" [class.seleccionado]="opcionSeleccionada === 6">
+        <div class="card" (click)="seleccionarOpcion(6)" [class.seleccionado]="opcionSeleccionada === 6">
             <div class="textos">
                 <h3> {{listaCandidatos[6].Presidente}} y {{listaCandidatos[6].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[6].PartidoPolitico}}</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('./img/6.jpg')" (click)="seleccionarOpcion(7)" [class.seleccionado]="opcionSeleccionada === 7">
+        <div class="card" (click)="seleccionarOpcion(7)" [class.seleccionado]="opcionSeleccionada === 7">
             <div class="textos">
                 <h3> {{listaCandidatos[7].Presidente}} y {{listaCandidatos[7].Vicepresidente}}</h3>
                 <p>{{listaCandidatos[7].PartidoPolitico}}</p>

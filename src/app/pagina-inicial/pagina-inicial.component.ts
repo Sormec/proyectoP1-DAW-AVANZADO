@@ -30,6 +30,7 @@ export class PaginaInicialComponent {
     this.sharedService.updateVotar(true);
     this.router.navigate(['/modulo-votacion']);
   }
+  //metodo para redirigir al modulo de Conteo
   goConteo(){
     this.sharedService.updateMenu(false);
     this.sharedService.updateVotar(false);

@@ -1,32 +1,6 @@
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-bottom: 100px;
-    min-height: 100%;
+.btn-inicial{
+    background-color: #3051D2;
 }
-.votar, .candidatos, .resultados{
-    
-    margin: 10px; 
-    padding: 20px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+.btn-inicial:hover{
+    background-color: #6380f3;
 }
-mat-icon{
-    font-size: 2rem;
-}
-.box-table{
-    padding-bottom: 150px;
-}
-table {
-    width: 20%;
-}  
-.mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-}
-h1{
-    text-align: center;
-}
-    

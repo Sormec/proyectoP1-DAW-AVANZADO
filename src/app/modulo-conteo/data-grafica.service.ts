@@ -71,31 +71,31 @@ export class DataGraficaService {
         console.log(this.DATAcandidatos[0].N_votos);
         break;
       case 1:
-        this.getCandidatos[1].N_votos = this.DATAcandidatos[1].N_votos + 10;
+        this.getCandidatos[1].N_votos = this.getCandidatos[1].N_votos + 10;
         console.log(this.DATAcandidatos[1].N_votos);
         break;
       case 2:
-        this.getCandidatos[2].N_votos = this.DATAcandidatos[2].N_votos + 10;
+        this.getCandidatos[2].N_votos =this.getCandidatos[2].N_votos + 10;
         console.log(this.DATAcandidatos[2].N_votos);
         break;
       case 3:
-        this.getCandidatos[3].N_votos = this.DATAcandidatos[3].N_votos + 10;
+        this.getCandidatos[3].N_votos = this.getCandidatos[3].N_votos + 10;
         console.log(this.DATAcandidatos[3].N_votos);
         break;
       case 4:
-        this.getCandidatos[4].N_votos = this.DATAcandidatos[4].N_votos + 10;
+        this.getCandidatos[4].N_votos = this.getCandidatos[4].N_votos + 10;
         console.log(this.DATAcandidatos[4].N_votos);
         break;
       case 5:
-        this.getCandidatos[5].N_votos = this.DATAcandidatos[5].N_votos + 10;
+        this.getCandidatos[5].N_votos = this.getCandidatos[5].N_votos + 10;
         console.log(this.DATAcandidatos[5].N_votos);
         break;
       case 6:
-        this.getCandidatos[6].N_votos = this.DATAcandidatos[6].N_votos + 10;
+        this.getCandidatos[6].N_votos = this.getCandidatos[6].N_votos + 10;
         console.log(this.DATAcandidatos[6].N_votos);
         break;
       case 7:
-        this.getCandidatos[7].N_votos = this.DATAcandidatos[7].N_votos + 10;
+        this.getCandidatos[7].N_votos = this.getCandidatos[7].N_votos + 10;
         console.log(this.DATAcandidatos[7].N_votos);
         break;
       default:

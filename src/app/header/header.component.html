@@ -1,22 +1,53 @@
-<nav class="navbar p-5">
-    <div class="container-fluid">
+
+<!-- <nav class="navbar p-5">
+    <div class="container-fluid"> -->
       <!-- Header de log in y bienvenida -->
-      <a class="navbar-brand cabecera-name" *ngIf="isLoggedIn==true">
+      <!-- <a class="navbar-brand cabecera-name" *ngIf="isLoggedIn==true">
         Votar nunca se ha vuelto tan fácil con VotaFácil
       </a>
       <a class=" navbar-brand cabecera-name" *ngIf="isMenu==true">
         Bienvenido a VotaFácil usuario: <b>{{email}}</b>
-      </a>
-      <!-- Header de modulo-votacion -->
+      </a> 
+      
       <a class="navbar-brand cabecera-name" *ngIf="isVotar==true">
         Modulo de Votación 
       </a>
       <a class="navbar-brand cabecera-name" *ngIf="isConteo==true">
         Modulo de Conteo de Votos 
-      </a>
+      </a> -->
       <!-- el '*ngif' me permite mostrar o NO algun pedazo de codigo-->
       <!-- Cuando allá iniciado sesión se mostrara este boton -->
-      <button *ngIf="isMenu==true" istype="button" class="btn btn-warning" (click)="logOut()" >Cerrar sesión</button>
+      <!-- <button *ngIf="isMenu==true" istype="button" class="btn btn-warning" (click)="logOut()" >Cerrar sesión</button>
       <button *ngIf="isVotar==true || isConteo==true" istype="button" class="btn btn-warning" (click)="goMenu()" >Regresar al Menú</button>
     </div>
-</nav>
+</nav> -->
+
+<div class="header-blue">
+
+  <div *ngIf="isLoggedIn==true" class="titulo text-light">Votar nunca se ha vuelto tan fácil con VotaFácil</div>
+  <div *ngIf="isMenu==true" class="titulo text-light">Menú VotaFácil</div>
+  <div *ngIf="isVotar==true" class="titulo text-light">Menú Votación</div>
+  <div *ngIf="isConteo==true" class="titulo text-light">Modulo Conteo</div>
+
+  <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+    <div class="container-fluid">
+      <a class="navbar-brand"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item" *ngIf="isMenu==true">
+            <a  class="nav-link" type="button" (click)="goVotar()"> Votación</a>
+          </li>
+          <li class="nav-item" *ngIf="isMenu==true">
+            <a class="nav-link" type="button" (click)="goConteo()"> Conteo </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button *ngIf="isVotar==true || isConteo==true" class="btn btn-light action-button" type="button" (click)="goMenu()">Volver Menu</button>
+          <button *ngIf="isMenu==true" class="btn btn-light action-button" type="button" (click)="logOut()">Cerrar Sesion</button>
+        </form>
+      </div>
+    </div>
+  </nav>

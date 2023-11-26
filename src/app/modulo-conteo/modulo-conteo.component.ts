@@ -8,7 +8,7 @@ import { DataGraficaService } from './data-grafica.service';
   styleUrls: ['./modulo-conteo.component.css']
 })
 export class ModuloConteoComponent {
-  view: [number,number] = [700, 500];
+  view: [number,number] = [1000, 500];
 
   // options
   gradient: boolean = true;
@@ -21,7 +21,7 @@ export class ModuloConteoComponent {
   };
 
   
-  constructor(private sharedService: SharedService, private dataService: DataGraficaService) {}
+  constructor(private dataService: DataGraficaService) {}
   
   get mostrarDatos() {
     return this.dataService.candidatosGrafica;

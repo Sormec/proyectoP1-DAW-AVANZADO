@@ -53,4 +53,19 @@ export class HeaderComponent implements OnInit{
     this.sharedService.updateMenu(true);
     this.router.navigate(['/Inicio']);
   }
+  goVotar(){
+    this.sharedService.updateMenu(false);
+    this.sharedService.updateLogin(false);
+    this.sharedService.updateConteo(false);
+    this.sharedService.updateVotar(true);
+    this.router.navigate(['/modulo-votacion']);
+  }
+  goConteo(){
+    this.sharedService.updateMenu(false);
+    this.sharedService.updateVotar(false);
+    this.sharedService.updateLogin(false);
+    this.sharedService.updateConteo(true);
+    this.router.navigate(['/modulo-conteo']);
+  }
+
 }

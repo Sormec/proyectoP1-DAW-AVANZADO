@@ -1,8 +1,7 @@
 .tipo-letra{
-    font-family: 'Belanosima', sans-serif;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.5rem;
-    background-color: #30A2D2; 
+    background-color: #30A2D2;
+    padding-bottom: 80px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 /* position debe estar en 'relative' para que este apegado abajo */
 footer{
