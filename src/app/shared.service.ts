@@ -41,5 +41,13 @@ export class SharedService{
     getEmail(){
         return this.userEmail;
     }
+    //actualizar variables para la pag de Inicio
+    updateInicio(){
+        this.updateLogin(false);
+        this.updateVotar(false);
+        this.updateConteo(false);
+        this.updateMenu(true);
+    }
+    
 }
 

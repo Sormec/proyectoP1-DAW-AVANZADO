@@ -4,62 +4,60 @@
         <!-- *ngFor="let candidato of listaCandidatos" hace que se repita toda la etiqueta 8 veces -->
         <div class="card" (click)="seleccionarOpcion(0)" [class.seleccionado]="opcionSeleccionada === 0">
             <div class="textos">
-                <h3> {{listaCandidatos[0].Presidente}} y {{listaCandidatos[0].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[0].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[0].presidente}} y {{listaCandidatos[0].vicepresidente}}</h3>
+                <p>{{listaCandidatos[0].partido_Politico}}</p>
             </div>
         </div>
         <div class="card" (click)="seleccionarOpcion(1)" [class.seleccionado]="opcionSeleccionada === 1">
             <div class="textos">
-                <h3> {{listaCandidatos[1].Presidente}} y {{listaCandidatos[1].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[1].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[1].presidente}} y {{listaCandidatos[1].vicepresidente}}</h3>
+                <p>{{listaCandidatos[1].partido_Politico}}</p>
             </div>
         </div>
         <div class="card" (click)="seleccionarOpcion(2)" [class.seleccionado]="opcionSeleccionada === 2">
             <div class="textos">
-                <h3> {{listaCandidatos[2].Presidente}} y {{listaCandidatos[2].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[2].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[2].presidente}} y {{listaCandidatos[2].vicepresidente}}</h3>
+                <p>{{listaCandidatos[2].partido_Politico}}</p>
             </div>
         </div>
         <div class="card" (click)="seleccionarOpcion(3)" [class.seleccionado]="opcionSeleccionada === 3">
             <div class="textos">
-                <h3> {{listaCandidatos[3].Presidente}} y {{listaCandidatos[3].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[3].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[3].presidente}} y {{listaCandidatos[3].vicepresidente}}</h3>
+                <p>{{listaCandidatos[3].partido_Politico}}</p>
             </div>
         </div>
 
         <div class="card" (click)="seleccionarOpcion(4)" [class.seleccionado]="opcionSeleccionada === 4">
             <div class="textos">
-                <h3> {{listaCandidatos[4].Presidente}} y {{listaCandidatos[4].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[4].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[4].presidente}} y {{listaCandidatos[4].vicepresidente}}</h3>
+                <p>{{listaCandidatos[4].partido_Politico}}</p>
             </div>
         </div>
         <div class="card" (click)="seleccionarOpcion(5)" [class.seleccionado]="opcionSeleccionada === 5">
             <div class="textos">
-                <h3> {{listaCandidatos[5].Presidente}} y {{listaCandidatos[5].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[5].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[5].presidente}} y {{listaCandidatos[5].vicepresidente}}</h3>
+                <p>{{listaCandidatos[5].partido_Politico}}</p>
             </div>
         </div>
         <div class="card" (click)="seleccionarOpcion(6)" [class.seleccionado]="opcionSeleccionada === 6">
             <div class="textos">
-                <h3> {{listaCandidatos[6].Presidente}} y {{listaCandidatos[6].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[6].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[6].presidente}} y {{listaCandidatos[6].vicepresidente}}</h3>
+                <p>{{listaCandidatos[6].partido_Politico}}</p>
             </div>
         </div>
         <div class="card" (click)="seleccionarOpcion(7)" [class.seleccionado]="opcionSeleccionada === 7">
             <div class="textos">
-                <h3> {{listaCandidatos[7].Presidente}} y {{listaCandidatos[7].Vicepresidente}}</h3>
-                <p>{{listaCandidatos[7].PartidoPolitico}}</p>
+                <h3> {{listaCandidatos[7].presidente}} y {{listaCandidatos[7].vicepresidente}}</h3>
+                <p>{{listaCandidatos[7].partido_Politico}}</p>
             </div>
         </div>
     </div>
 
-    <div class="banner" style="background-image: url('./img/banner.jpg')">
-        <h2>Datos Seleccionados</h2>
+    <div class="banner" >
+        <h2>Opción Seleccionada</h2>
         <ul> 
-            <p>Cada voto equivale a 10</p>
-            <p> <b>Número de votos <br>
-                realizados: </b> {{ puntos }} <br><br>
-                <b>Opción selecconada:</b> <br> {{listaCandidatos[opcionSeleccionada].Presidente}} 
+            <p> 
+                <br> {{listaCandidatos[opcionSeleccionada].presidente}} 
             </p>
         </ul>
         <button class="boton" (click)="voto()">Votar</button>

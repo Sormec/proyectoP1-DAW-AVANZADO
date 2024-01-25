@@ -22,6 +22,8 @@ import { curveLinear } from 'd3-shape';
 import { ScaleLinear, ScalePoint, ScaleTime } from 'd3-scale';
 import { BaseType } from 'd3-selection';
 import { ModuloConteoComponent } from './modulo-conteo/modulo-conteo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './servicios/auth.service';
 
 
 @NgModule({
@@ -48,8 +50,9 @@ import { ModuloConteoComponent } from './modulo-conteo/modulo-conteo.component';
     MatInputModule,
     MatGridListModule,
     NgxChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

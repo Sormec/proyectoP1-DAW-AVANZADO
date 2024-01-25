@@ -1,77 +1,104 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { DataGraficaService } from '../modulo-conteo/data-grafica.service';
+import { CandidatosService } from '../servicios/candidatos.service';
+import { CandidatoInterface } from '../interfaces/CandidatoInterface';
 
 @Component({
   selector: 'app-modulo-votar',
   templateUrl: './modulo-votar.component.html',
   styleUrls: ['./modulo-votar.component.css']
 })
-export class ModuloVotarComponent {
-  constructor(private sharedService: SharedService, private dataService: DataGraficaService){}
+export class ModuloVotarComponent implements OnInit{
+  constructor(private sharedService: SharedService,
+    private candidatoService: CandidatosService, private router: Router){}
   opcionSeleccionada: number = 9;
-  puntos: number = 0; // almacena los puntos
   contador: number = 0;
   listaCandidatos: any[] = [];
-  /* isVotar: boolean = true; */
   isVotar: boolean = true;
-  
-  ngOnInit(): void {
-    this.listaCandidatos = this.dataService.getCandidatos;
 
+  ngOnInit(): void {
+    this.mostrarCadidatoTodos();
     this.sharedService.isVotar$.subscribe(isVotar =>{
       this.isVotar = isVotar;
     })
   }
+  //solo para 'CONSULTA_CANDIDATO_ALL'
+  CandidatoConsultar = new FormGroup({
+    Transaccion: new FormControl()
+  })
+  //solo para 'CONTAR_VOTO'
+  CandidatoVotar = new FormGroup({
+    Id: new FormControl(),
+    Transaccion: new FormControl()
+  })
+    
+  mostrarCadidatoTodos(){
+    this.CandidatoConsultar.value.Transaccion = 'CONSULTA_CANDIDATO_ALL';
+    //envia la transaccion para que la BD le responda
+    this.candidatoService.getCandidatos(this.CandidatoConsultar.value as CandidatoInterface).subscribe((data:any) =>{
+      //se muestra la respuesta en la pag
+      console.log(data);
+      this.listaCandidatos = data;
+    },
+    (errorData) => (
+      alert("Usuario NO autorizado"),
+      this.sharedService.updateInicio(),
+      this.router.navigate(['/Inicio'])
+    ))
+  }
   
   voto(){
-    //Solo puede ingresar si tiene menos de 3 intentos
-    if (this.contador <= 2) {
+    //VALIDAR EL VOTO ASI: LA VARIABLE CONTADOR QUE SEA EN UNA CLASE SERVICE PARA QUE SOLO SE PUEDA VOTAR UNA VEZ 
+    if (this.contador == 0) {
       switch (this.opcionSeleccionada) {
         case 0:
-          this.puntos++;
-          this.dataService.setVoto(0);
+          this.CandidatoVotar.value.Id = 1;
           break;
         case 1:
-          this.puntos++;
-          this.dataService.setVoto(1);
+          this.CandidatoVotar.value.Id = 2;
           break;
         case 2:
-          this.puntos++;
-          this.dataService.setVoto(2);
+          this.CandidatoVotar.value.Id = 3;
           break;
          case 3:
-          this.puntos++;
-          this.dataService.setVoto(3);
+          this.CandidatoVotar.value.Id = 4;
           break;
         case 4:
-          this.puntos++;
-          this.dataService.setVoto(4);
+          this.CandidatoVotar.value.Id = 5;
           break;
         case 5:
-          this.puntos++;
-          this.dataService.setVoto(5);
+          this.CandidatoVotar.value.Id = 6;
           break;
         case 6:
-          this.puntos++;
-          this.dataService.setVoto(6);
+          this.CandidatoVotar.value.Id = 7;
           break;
         case 7:
-          this.puntos++;
-          this.dataService.setVoto(7);
+          this.CandidatoVotar.value.Id = 8;
           break; 
         default:
           alert('Por favor, selecciona una opción primero.');
           break;
       }
-    }else{
-      alert('El usuario solo tiene 3 votos validos por inicio de sesión.');
+      this.CandidatoVotar.value.Transaccion = 'CONTAR_VOTO';
+      //envia la transaccion para que la BD le responda
+      this.candidatoService.setVoto(this.CandidatoVotar.value as CandidatoInterface).subscribe((data:any) =>{
+        console.log(data);
+        alert (data[0].leyenda);
+        this.sharedService.updateInicio(),
+        this.router.navigate(['/Inicio'])
+      },
+      (errorData) => (
+        alert("Usuario NO autorizado"),
+        this.sharedService.updateInicio(),
+        this.router.navigate(['/Inicio'])
+      ))
+      this.contador++;
+    } else{
+      alert('El usuario solo tiene Un voto valido por inicio de sesión.');
     }
-    this.contador++;
+    
     this.opcionSeleccionada = 9;
   }
   //cuando se da click acciona el efecto CSS y se tiene conteo de quien es el candidato seleccionado
