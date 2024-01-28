@@ -41,7 +41,7 @@ export class ModuloVotarComponent implements OnInit{
       //se muestra la respuesta en la pag
       console.log(data);
       this.listaCandidatos = data;
-    },
+    },//Si ocurre un error saltara se ejecuta esta parte
     (errorData) => (
       alert("Usuario NO autorizado"),
       this.sharedService.updateInicio(),
@@ -50,7 +50,6 @@ export class ModuloVotarComponent implements OnInit{
   }
   
   voto(){
-    //VALIDAR EL VOTO ASI: LA VARIABLE CONTADOR QUE SEA EN UNA CLASE SERVICE PARA QUE SOLO SE PUEDA VOTAR UNA VEZ 
     if (this.contador == 0) {
       switch (this.opcionSeleccionada) {
         case 0:

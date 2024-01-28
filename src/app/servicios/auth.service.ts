@@ -6,7 +6,7 @@ import { UsuarioInterface } from '../interfaces/UsuarioInterface';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl: string = 'https://localhost:7271/api/Usuario/GetLogin';
+  baseUrl: string = 'http://localhost:4033/api/Usuario/GetLogin';
   constructor(private http: HttpClient) { }
 
   login (user: UsuarioInterface){

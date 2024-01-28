@@ -6,9 +6,9 @@ import { CandidatoInterface } from '../interfaces/CandidatoInterface';
   providedIn: 'root'
 })
 export class CandidatosService {
-  baseUrlGetCandidatos: string = 'https://localhost:7271/api/Candidato/GetCandidatoAll';
-  baseUrlGetGafica: string = 'https://localhost:7271/api/Candidato/GetDataGrafica';
-  baseUrlSetVoto: string = 'https://localhost:7271/api/Candidato/SetCandidato';
+  baseUrlGetCandidatos: string = 'http://localhost:4033/api/Candidato/GetCandidatoAll';
+  baseUrlGetGafica: string = 'http://localhost:4033/api/Candidato/GetDataGrafica';
+  baseUrlSetVoto: string = 'http://localhost:4033/api/Candidato/SetCandidato';
   constructor(private http: HttpClient) { }
   
   getCandidatos(candidatos: CandidatoInterface){
