@@ -1,0 +1,18 @@
+
+<div class="grafica m-0 row justify-content-center align-items-center">
+  <ngx-charts-advanced-pie-chart
+  [view]="view"
+  scheme="cool"
+  [results]="mostrarDatos"
+  [gradient]="gradient"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  class="col-auto text-center"
+  >
+  </ngx-charts-advanced-pie-chart>
+</div>
+
+<!-- <button (click)="aceptar()">
+  INGRESAR DATOS RAMDON 
+</button> -->
