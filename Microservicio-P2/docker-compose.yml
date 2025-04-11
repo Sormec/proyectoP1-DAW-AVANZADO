@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    mssql:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        hostname: mssql
+        environment: 
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "Quito8##"
+        ports:
+            - "5033:1433"
+
+    api:
+        image: proyectofinal4:latest
+        hostname: api
+        depends_on:
+            - mssql
+        ports:
+            - "4033:80"
